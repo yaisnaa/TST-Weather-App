@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <!-- CSS Leaflet (library peta) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- CSS kita sendiri -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h1 class="logo">Weather App</h1>
+    <form id="search-form">
+      <input type="text" id="city-input" placeholder="Cari kota..." autocomplete="off">
+      <button type="submit">Cari</button>
+    </form>
+  </nav>
+
+  <main class="content">
+
+    <!-- MAP -->
+    <section class="card">
+      <h2>Peta</h2>
+      <div id="map"></div>
+    </section>
+
+    <!-- 3. CURRENT WEATHER -->
+    <section class="card" >
+      <h2>Cuaca Saat Ini</h2>
+      <div id="current-weather">
+        <p>Cari kota untuk melihat cuaca.</p>
+      </div>
+    </section>
+
+    <!-- 4. FORECAST -->
+    <section class="card">
+      <h2>Prakiraan Cuaca</h2>
+      <div id="forecast"></div>
+    </section>
+
+  </main>
+
+  <!-- JS Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- API key (config.js tidak ikut ke GitHub) -->
+  <script src="../config.js"></script>
+
+  <!-- JS kita: Model dan View dulu, Controller terakhir -->
+  <script src="../model/weatherModel.js"></script>
+  <script src="weatherView.js"></script>
+  <script src="../controller/weatherController.js"></script>
+</body>
+</html>
